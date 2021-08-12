@@ -5,7 +5,7 @@ require 'faker'
 describe 'post' do
   context 'create new contacts' do
     it 'returns a created contact' do
-      @body ={
+      @body = {
         "name" => Faker::Movies::HarryPotter.character,
         "last_name" => Faker::Movies::HarryPotter.house,
         "email" => Faker::Internet.email,
@@ -28,7 +28,7 @@ describe 'post' do
     end
 
     it 'returns an invalid email' do
-      @body ={
+      @body = {
         "name" => Faker::Movies::HarryPotter.character,
         "last_name" => Faker::Movies::HarryPotter.house,
         "email" => "teste",
@@ -52,7 +52,7 @@ describe 'post' do
     end
 
     it 'returns an error for blank email' do
-      @body ={
+      @body = {
         "name" => Faker::Movies::HarryPotter.character,
         "last_name" => Faker::Movies::HarryPotter.house,
         "email" => "",
@@ -76,7 +76,7 @@ describe 'post' do
     end
 
     it 'returns an error for blank email' do
-      @body ={
+      @body = {
         "name" => Faker::Movies::HarryPotter.character,
         "last_name" => Faker::Movies::HarryPotter.house,
         "email" => "nat@gmail.com",
