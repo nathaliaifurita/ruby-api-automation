@@ -13,7 +13,7 @@ Pre-Req:
 - Git
 
 1. Clone the project:
-```git clone```
+```git clone git@github.com:nathaliaifurita/ruby-api-automation.git```
 
 2. Project Instalation:
  ```bundle install```
