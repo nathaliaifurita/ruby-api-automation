@@ -46,9 +46,10 @@ describe 'post' do
           'Accept' => 'application/vnd.tasksmanager.v2'
           }
         )
+      parsed_response = JSON.parse(response.body)
       expect(response.code).to eq 422
       expect(response.message).to eql 'Unprocessable Entity'
-      expect(response.parsed_response['errors']['email']) == 'não é válido'
+      expect(parsed_response['errors']['email']).to eq ['não é válido']
     end
 
     it 'returns an error for blank email' do
@@ -70,12 +71,13 @@ describe 'post' do
           'Accept' => 'application/vnd.tasksmanager.v2'
         }
       )
+      parsed_response = JSON.parse(response.body)
       expect(response.code).to eq 422
       expect(response.message).to eql 'Unprocessable Entity'
-      expect(response.parsed_response['errors']['email']) == 'não pode ficar em branco'
+      expect(parsed_response['errors']['email'].first).to eq 'não pode ficar em branco'
     end
 
-    it 'returns an error for blank email' do
+    it 'returns an error for an already used email' do
       @body = {
         "name" => Faker::Movies::HarryPotter.character,
         "last_name" => Faker::Movies::HarryPotter.house,
@@ -94,9 +96,10 @@ describe 'post' do
           'Accept' => 'application/vnd.tasksmanager.v2'
         }
       )
+      parsed_response = JSON.parse(response.body)
       expect(response.code).to eq 422
       expect(response.message).to eql 'Unprocessable Entity'
-      expect(response.parsed_response['errors']['email']) == 'não pode ficar em branco'
+      expect(parsed_response['errors']['email']).to eq ['já está em uso']
     end
   end
 end
