@@ -9,7 +9,7 @@ API used: [Automação com Batista](https://automacaocombatista.herokuapp.com/ap
 
 Pre-Req:
 - Vscode
-- Ruby - 2.6.3 ou superior
+- Ruby - 2.6.3 or superior
 - Git
 
 1. Clone the project:
