@@ -42,6 +42,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
+    shoulda-matchers (5.0.0)
+      activesupport (>= 5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     zeitwerk (2.4.2)
@@ -56,6 +58,7 @@ DEPENDENCIES
   httparty
   nokogiri
   rspec
+  shoulda-matchers
 
 BUNDLED WITH
    1.17.2
