@@ -5,7 +5,6 @@ describe 'get' do
     it 'returns a list of contacts' do
       response = HTTParty.get('https://api-de-tarefas.herokuapp.com/contacts/337')
       parsed_response = JSON.parse(response.body)
-      puts parsed_response
       expect(response.code).to eq 200
       expect(response.message).to eql 'OK'
       expect(parsed_response['data']['id']).not_to be_empty
